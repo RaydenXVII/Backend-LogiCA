@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('license_plate');
-            $table->enum('status', ['available', 'maintenance', 'unavailable']);
-            $table->date('last_maintenance_date')->nullable();
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicles');
+        Schema::dropIfExists('notifications');
     }
 };
